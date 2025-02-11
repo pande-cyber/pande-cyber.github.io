@@ -1,0 +1,168 @@
+/* Background halaman */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #d6336c;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container utama */
+.container {
+    max-width: 600px;
+    width: 90%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Slideshow container */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Batasi ukuran supaya nggak terlalu besar */
+    height: 300px; /* Biar tinggi tetap */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Gambar di slideshow */
+.slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Supaya gambar nggak gepeng */
+    border-radius: 10px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Animasi slide masuk */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Tombol navigasi slideshow */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Navigasi ke halaman lain */
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navigation a {
+    background: #d6336c;
+    color: white;
+    padding: 12px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.navigation a:hover {
+    background: #b91d52;
+    transform: scale(1.1);
+}
+
+/* Efek Hati Jatuh */
+.heart {
+    position: fixed;
+    color: red;
+    font-size: 20px;
+    animation: fall linear infinite;
+    top: -10px;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Efek Ketik di Ucapan */
+.typing {
+    font-size: 18px;
+    border-right: 3px solid #d6336c;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+/* Video container */
+.video-container {
+    max-width: 500px; /* Batasi ukuran video */
+    width: 90%; /* Biar responsif */
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Video */
+video {
+    width: 100%;
+    height: auto; /* Biar proporsional */
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Efek Muncul Smooth */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* Efek Ketik */
+.typing {
+    font-size: 18px;
+    border-right: 3px solid #d6336c;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+    animation: typing steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* Animasi Ketik */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animasi Kedip Kursor */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
